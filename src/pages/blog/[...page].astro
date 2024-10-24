@@ -19,14 +19,14 @@ const { page } = Astro.props;
   </div>
 
   {
-    page.data.length === 0 ? (
+    page['data']['length'] === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
         <p class="font-bold">Sorry!</p>
         <p>There are no blog posts to show at the moment. Check back later!</p>
       </div>
     ) : (
       <ul>
-        {page.data.map((post) => (
+        {page['data'].map((post) => (
           <>
             <HorizontalCard
               title={post.data.title}
@@ -46,8 +46,8 @@ const { page } = Astro.props;
 
   <div class="flex justify-between">
     {
-      page.url.prev ? (
-        <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
+      page['url']['prev'] ? (
+        <a href={page['url']['prev']} class="btn btn-ghost my-10 mx-5">
           {" "}
           <svg
             class="h-6 w-6 fill-current md:h-8 md:w-8"
@@ -65,8 +65,8 @@ const { page } = Astro.props;
       )
     }
     {
-      page.url.next ? (
-        <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
+      page['url']['next'] ? (
+        <a href={page['url']['next']} class="btn btn-ghost my-10 mx-5">
           Older Posts{" "}
           <svg
             class="h-6 w-6 fill-current md:h-8 md:w-8"
