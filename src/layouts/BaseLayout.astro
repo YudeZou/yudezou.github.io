@@ -7,6 +7,10 @@ import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
+const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
+const gaSrc = `https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`;
+
+
 const {
   image,
   title = SITE_TITLE,
@@ -24,6 +28,17 @@ const {
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
+    <script async src={gaSrc} />
+    <script async>
+      const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", TRACKING_ID);
+    </script>
+
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
