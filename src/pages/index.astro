@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
+import TimeLineElement from "../components/cv/TimeLine.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -10,69 +11,149 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+  <div class="pb-12 mt-5" id="profile">
+    <div class="text-xl py-1">Hi 👋</div>
+    <div class="text-5xl font-bold">I'm Yude Zou (邹誉德)</div>
+    <div class="text-3xl py-3 font-bold">a 4th-year Undergraduate Student</div>
+    <div class="text-2xl py-3 font-bold">@<a href="https://en.szu.edu.cn/" class="text-blue-500">Shenzhen University</a>, majoring in Computer Science and Technology</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I will be a PhD student of <a href="https://en.sjtu.edu.cn/" class="text-blue-500">Shanghai Jiao Tong University</a>
+        and <a href="https://www.shlab.org.cn/" class="text-blue-500">Shanghai AI Lab</a> with a joint-training PhD program
+        in the autumn of 2025, under the supervision of 
+        <a href="https://jimmysuen.github.io/" class="text-blue-500">Xiao Sun</a>
+        and <a href="https://jhc.sjtu.edu.cn/~gjzheng/index.html" class="text-blue-500">Guanjie Zheng</a>.
+
+        <br><br>Now I am pursuing my bachelor's degree at SZU and working on my graduation project under
+        the guidance of <a href="https://csse.szu.edu.cn/staff/ruizhenhu/" class="text-blue-500">Ruizhen Hu</a>.
+        Before that, I spent wonderful time at Westlake University, supervised by
+        <a href="https://www.westlake.edu.cn/faculty/xiangru-huang.html" class="text-blue-500">Xiangru Huang</a>,
+        and at RHOS Lab, Shanghai Jiao Tong University, supervised by
+        <a href="https://dirtyharrylyl.github.io/" class="text-blue-500">Yong-Lu Li</a> as a visiting student.
+
+        <br><br>My research interests mainly lie in <b>Human-Centric Digitalization</b>, involving 
+        Generative AI, MLLMs, Computer Vision, and Computer Graphics.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn" href="mailto:xdzouyd@163.com" target="_blank"> Let's connect!</a>
+      <a href="" target="_blank" class="btn btn-outline ml-5">
+        Google Scholar
       </a>
     </div>
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  <div id="news">
+    <div class="text-3xl w-full font-bold mb-2">News 📰</div>
+  </div>
+
+  <div class="overflow-y-auto h-48 mb-10 bg-white rounded-lg p-4">
+    <ul class="list-disc list-inside space-y-2">
+      <li><span class="font-bold">[2024.09]</span> I was admitted to SJTU with the <b>Top 5/137</b> score in the same major, see you in Shanghai!</li>
+      <li><span class="font-bold">[2024.09]</span> RoboTwin received the <span class="text-red-500"><b>Best Paper Award</b></span> 🏆 at the ECCV Workshop!</li>
+      <li><span class="font-bold">[2023.12]</span> I received <b>Chinese National Scholarship</b>. (Top 0.067% in SZU, the highest national honor for undergraduate students)</li>
+      <li><span class="font-bold">[2023.08]</span> Our game 🎮 won the <b>National First Prize</b> 🏅 and <b>Highlight Work</b> ✨ in Chinese Collegiate Computing Competition!</li>
+    </ul>
+  </div>
+  
+  <div id="publications">
+    <div class="text-3xl w-full font-bold mb-2">Publications 📄</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="	RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins (early version)"
+    img="/2024-RoboTwin.png"
+    desc="<a href='https://yaomarkmu.github.io/' class='text-blue-500'>Yao Mu</a>*, <a href='https://tianxingchen.github.io/' class='text-blue-500'>Tianxing Chen</a>*, Shijia Peng*, Zanxin Chen*, Zeyu Gao, <b><u>Yude Zou</u></b>, Lunkai Lin, Zhiqiang Xie and <a href='http://luoping.me/' class='text-blue-500'>Ping Luo</a>†"
+    url="https://robotwin-benchmark.github.io/early-version/"
+    badge="Best Paper"
+    target="ECCV Workshop 2024"
   />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <!-- <div class="divider my-0"></div> -->
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  <div id="projects">
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects 🛠️</div>
   </div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <HorizontalCard
+  title="Kaiwu AI: Multi-agent Game AI"
+  img="/kaiwu.png"
+  desc="Honered with <b>4/172</b> in the semi-final and <b>5/8</b> in the final \
+  at Tencent Kaiwu AI National Open Competition"
+  url="https://mp.weixin.qq.com/s/W5pMIOqsG8DTEdR6mYTlRQ"
+  target="Dec. 2023, Project leader & 4-people Team"
+  />
+  <div class="divider my-0"></div>
+
+  <HorizontalCard
+  title="Materia Medica Drugstore: 2.5D Role-playing Game"
+  img="/bcyp.png"
+  desc="Honored with the <b>Highlight Work</b> and <b>National First Prize</b> \
+  in Chinese Collegiate Computing Competition (4C) and the \
+  <b>National Third Prize</b> in National College Digital Art&Design Awards (NCDA)"
+  url="https://mp.weixin.qq.com/s/t8Z0j3rk0tmrz0ERPjmtUw"
+  target="Aug. 2023, Major designer & Programmer & 5-people Team"
+  />
+  <div class="divider my-0"></div>
+
+  <div id="education">
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Education 🎓</div>
+  </div>
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="HuiZhou High School"
+      subtitle="[2018.09 - 2021.06], [Guangdong, China]"
+      desc="Excellent student of Huizhou"
+    />
+    <TimeLineElement
+      title="Shenzhen University"
+      subtitle="[2021.09 - 2025.06], [Guangdong, China]"
+      desc="B.Eng. (studying), Computer Science and Technology <br>\
+      GPA: 4.17/4.5, <span class='text-red-500'><b>Rank: 1/147</b></span> (Top 0.68%, 2-year continuous)"
+    />
+
+  </div>
+
+  <div id="honors">
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Honors 🏆</div>
+  </div>
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a target="_blank">2024 <b>Peng Cheng Scholarship</b></a>
+    </li>
+    <li>
+      <a target="_blank">2023 <b>Chinese National Scholarship</b></a>
+    </li>
+    <li>
+      <a target="_blank">2023 <b>SZU Litchi Park Star Scholarship</b></a>
+    </li>
+  </ul>
+
+  <div id="misc">
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Misc. 🎉</div>
+  </div>
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a target="_blank"><b>Music 🎧 :</b> 
+      <a href="https://music.apple.com/cn/artist/%E8%AE%B8%E5%B5%A9/601736777" target="_blank"
+      class="text-blue-500 hover:underline">XU Song</a>, 
+      <a href="https://music.apple.com/cn/artist/%E9%99%B6%E5%96%86/16789930" target="_blank"
+      class="text-blue-500 hover:underline">David Tao</a>
+      </a>
+    </li>
+    <li>
+      <a target="_blank"><b>Stand-Up Comedy 🎤 :</b>  
+      <a href="https://www.youtube.com/watch?v=SThp1UIhCts" target="_blank"
+      class="text-blue-500 hover:underline">LIU Yang, <em>Icarus</em></a>,
+      <a href="https://www.youtube.com/watch?v=6SsbS3gOSwA" target="_blank"
+      class="text-blue-500 hover:underline">FU Hang</a>
+      </a>
+    </li>
+    <li>
+      <a target="_blank"><b>Electronic Game 🎮 :</b> Minecraft 💎⛏️, Kirby ✨, Zelda 🗡️</a>
+    </li>
+    <li>
+      <a target="_blank"><b>Sports 🏃‍♂️ : </b>Basketball 🏀, Swimming 🏊‍♂️</a>
+    </li>
+  </ul>
+
 </BaseLayout>
