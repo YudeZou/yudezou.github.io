@@ -14,16 +14,6 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <script async src={gaSrc} />
-  <script async>
-    const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", TRACKING_ID);
-  </script>
   <div class="pb-12 mt-5" id="profile">
     <div class="text-xl py-1">Hi 👋</div>
     <div class="text-5xl font-bold">I'm Yude Zou (邹誉德)</div>

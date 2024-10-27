@@ -7,10 +7,6 @@ import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
-const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
-const gaSrc = `https://www.googletagmanager.com/gtag/js?id=${TRACKING_ID}`;
-
-
 const {
   image,
   title = SITE_TITLE,
@@ -26,15 +22,14 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
-    <script async src={gaSrc} />
-    <script async>
-      const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-QKMYDZL4BL"/>
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        window.dataLayer.push(arguments);
+        dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", TRACKING_ID);
+      gtag("config", "G-QKMYDZL4BL");
     </script>
   </head>
   <body>
