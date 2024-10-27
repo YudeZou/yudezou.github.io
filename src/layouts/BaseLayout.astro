@@ -26,8 +26,6 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
-  </head>
-  <body>
     <script async src={gaSrc} />
     <script async>
       const TRACKING_ID = import.meta.env.PUBLIC_TRACKING_ID;
@@ -38,7 +36,8 @@ const {
       gtag("js", new Date());
       gtag("config", TRACKING_ID);
     </script>
-
+  </head>
+  <body>
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
