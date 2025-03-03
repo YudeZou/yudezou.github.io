@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badges, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
@@ -24,8 +24,8 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}
-          {badge && <div class="badge bg-red-500 text-white mx-2">{badge}</div>}
         </h1>
+        {badges && badges.map((badge) => <div class="badge bg-red-500 text-white mx-2">{badge}</div>)}
         {target && <div class="badge badge-outline">{target}</div>}
         <p class="py-1 text-1xl" set:html={desc} />
         <div class="card-actions justify-end">
