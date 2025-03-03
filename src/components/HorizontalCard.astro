@@ -25,7 +25,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <h1 class="text-xl font-bold">
           {title}
         </h1>
-        {badges && badges.map((badge) => <div class="badge bg-red-500 text-white mx-1">{badge}</div>)}
+        {badges && badges.map((badge) => <div class="badge bg-red-500 text-white mx-1 font-bold">{badge}</div>)}
         {target && target !== "_blank" && <div class="badge badge-outline mx-1">{target}</div>}
         <p class="py-1 text-1xl" set:html={desc} />
         <div class="card-actions justify-end">
