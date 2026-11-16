@@ -17,18 +17,17 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5" id="profile">
     <div class="text-xl py-1">Hi 👋</div>
     <div class="text-5xl font-bold">I'm Yude Zou (邹誉德)</div>
-    <div class="text-3xl py-3 font-bold">a first-year Ph.D. Student</div>
+    <div class="text-3xl py-3 font-bold">a second-year Ph.D. Candidate</div>
     <div class="text-2xl py-3 font-bold">@<a href="https://en.sjtu.edu.cn/" class="text-blue-500">Shanghai Jiao Tong University</a> </div>
     <div class="py-2">
       <text class="text-lg">
-        I am a first-year Ph.D. student of <a href="https://en.sjtu.edu.cn/" class="text-blue-500">Shanghai Jiao Tong University</a>
+        I am a second-year Ph.D. candidate of <a href="https://en.sjtu.edu.cn/" class="text-blue-500">Shanghai Jiao Tong University</a>
         and <a href="https://www.shlab.org.cn/" class="text-blue-500">Shanghai AI Laboratory</a> with a joint-training Ph.D. program
         under the supervision of <a href="https://jhc.sjtu.edu.cn/~gjzheng/index.html" class="text-blue-500">Guanjie Zheng</a>. 
         <!-- <a href="https://jimmysuen.github.io/" class="text-blue-500">Xiao Sun</a>
         and -->
-        I'm working closely with <a href="https://scholar.google.com/citations?hl=en&user=6rjfzQUAAAAJ" class="text-blue-500">Xing Gao</a>.
 
-        <br><br>Now I am a member of <a href="https://internrobotics.shlab.org.cn/" class="text-blue-500">Intern Robotics</a> team at SHLab. 
+        <br><br>Now I am a member of the Physical Intelligence Team at <a href="https://www.shlab.org.cn/" class="text-blue-500">Shanghai AI Laboratory</a>.
         Before that, I received my bachelor's degree at Shenzhen University under the guidance of 
         <a href="https://csse.szu.edu.cn/staff/ruizhenhu/" class="text-blue-500">Ruizhen Hu</a>.
         I spent wonderful time at Westlake University, supervised by
@@ -57,6 +56,7 @@ const last_posts = posts.slice(0, 3);
 
   <div class="overflow-y-auto h-48 mb-10 bg-white rounded-lg p-4">
     <ul class="list-disc list-inside space-y-2">
+      <li><span class="font-bold">[2026.09]</span> <a href="https://infcoil.github.io/" target="_blank" class="text-blue-500">InfCoiL</a>, the second work in our <b>Inf series</b>, has been accepted to <b>NeurIPS 2026</b>!</li>
       <li><span class="font-bold">[2026.01]</span> InfBaGel is accepted to <b>ICLR 2026</b>, this is my first paper as the sole first author. Thanks to co-authors and mentors!</li>
       <li><span class="font-bold">[2024.09]</span> I was admitted to SJTU with the <b>Top 5/137</b> interview score in the same major, see you in Shanghai!</li>
       <li><span class="font-bold">[2024.09]</span> RoboTwin received the <span class="text-red-500"><b>Best Paper Award</b></span> 🏆 at the ECCV Workshop!</li>
@@ -70,6 +70,22 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <HorizontalCard
+    title="Review the Episodes, Refine the Lessons: Simple Memory Evolution for Embodied Agents"
+    img="/simplevo.webp"
+    desc="Yifei Yao*, <b><u>Yude Zou*</u></b>, Xing Gao†, Guanbo Jiao, Yukai Wang, Jianming Ma, Weinan Zhang, Chunhua Shen"
+    url="https://arxiv.org/abs/2611.11509"
+    badges={["arXiv 2026"]}
+  />
+
+  <HorizontalCard
+    title="Profiling a Frontier Agent with EBench: From Direct Control to Harness with Policy"
+    img="/ebench.webp"
+    desc="Yifei Yao*, <b><u>Yude Zou*</u></b>, Guanbo Jiao*, Xing Gao†, Ning Gao, Yukai Wang, Jiantong Chen, Zihou Zhu, Xinyu Li, Ningyu Yan, Shuai Wang, Jianming Ma, Haoyu Guo, Weinan Zhang, Chunhua Shen"
+    url="https://internrobotics.github.io/EBench-Astra-Tech-Report/"
+    badges={["arXiv 2026"]}
+  />
+
+  <HorizontalCard
     title="	InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement"
     img="/infbagel.png"
     desc="<b><u>Yude Zou</u></b>, Junji Gong, Xing Gao†, Zixuan Li, Tianxing Chen, Guanjie Zheng"
@@ -78,13 +94,28 @@ const last_posts = posts.slice(0, 3);
   />
 
   <HorizontalCard
+    title="InfCoiL: Coordinated Planner-Controller Learning for Closed-Loop Physics-Based Human-Object Interaction"
+    img="/infcoil.webp"
+    desc="<b><u>Yude Zou*</u></b>, Yifei Yao*, Yiwei Hao*, Hanqing Wang, Xing Gao†"
+    url="https://infcoil.github.io/"
+    badges={["NeurIPS 2026"]}
+  />
+
+  <HorizontalCard
+    title="PICA-WAM: Visual Perturbation Invariance via Cross-Appearance Self-Alignment in World Action Models"
+    img="/pica-wam.webp"
+    desc="<b><u>Yude Zou*</u></b>, Yifei Yao*, Guanbo Jiao*, Jianming Ma, Guanjie Zheng, Xing Gao†"
+    url="https://github.com/YudeZou/PICA-WAM-release"
+    badges={["arXiv 2026"]}
+  />
+
+  <HorizontalCard
     title="	Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback"
     img="/agent2world.png"
     desc="Mengkang Hu*, Bowei Xia*, Yuran Wu, Ailing Yu, <b><u>Yude Zou</u></b>, Qiguang Chen, Shijian Wang, Jiarui Jin, Kexin Li, Wenxiang Jiao, Yuan Lu, Ping Luo†"
     url="https://agent2world.github.io/"
-    target="arXiv 2025"
+    badges={["NeurIPS 2026"]}
   />
-  
 
   <HorizontalCard
     title="	Text2World: Benchmarking Large Language Models for Symbolic World Model Generation"
@@ -93,9 +124,7 @@ const last_posts = posts.slice(0, 3);
     url="https://text-to-world.github.io/"
     badges={["ACL 2025 Findings"]}
   />
-  <!-- target="arXiv 2025" -->
-  <!-- <div class="divider my-0"></div> -->
-  
+
   <HorizontalCard
     title="	RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins"
     img="/2024-cvpr-robotwin.jpg"
@@ -103,7 +132,6 @@ const last_posts = posts.slice(0, 3);
     url="https://robotwin-benchmark.github.io/"
     badges={["CVPR 2025 Highlight", "ECCV WS 2024 Best Paper"]}
   />
-  <!-- <div class="divider my-0"></div> -->
 
   <div id="projects">
     <div class="text-3xl w-full font-bold mb-5 mt-10">Projects 🛠️</div>
@@ -147,7 +175,7 @@ const last_posts = posts.slice(0, 3);
     />
     <TimeLineElement
       title="Shanghai Jiao Tong University"
-      subtitle="[Ph.D. Student from 2025'Fall], [Shanghai, China]"
+      subtitle="[Ph.D. Candidate from 2025'Fall], [Shanghai, China]"
       desc=""
     />
   </div>
